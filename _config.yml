@@ -1,12 +1,4 @@
-title: "Zhixin Zhu’s Homepage"
-description: "Personal Homepage"
+title: Zhixin Zhu’s Homepage
+description: Personal academic homepage
+markdown: kramdown
 theme: null
-
-header_pages:
-  - index.md
-  - about.md
-  - blog/index.md
-
-author:
-  name: Zhixin Zhu
-  email: cindy.zhu@live.cn
