@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+    </div>
+    <nav class="nav-right">
+      {% for item in site.header_pages %}
+        {% assign p = site.pages | where: "path", item | first %}
+        <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+      {% endfor %}
+      <button id="theme-toggle" aria-label="Toggle theme">🌗</button>
+      <button id="lang-toggle" aria-label="Toggle language">🌐</button>
+    </nav>
+  </header>
+
+  <main class="content">
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>© {{ site.time | date: "%Y" }} {{ site.author.name }} · <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const langBtn = document.getElementById('lang-toggle');
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) document.body.dataset.theme = currentTheme;
+    else if (prefersDark) document.body.dataset.theme = 'dark';
+
+    themeBtn.addEventListener('click', () => {
+      const theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.body.dataset.theme = theme;
+      localStorage.setItem('theme', theme);
+    });
+
+    const currentLang = localStorage.getItem('lang') || 'en';
+    document.querySelectorAll(`[data-lang]`).forEach(el => {
+      el.style.display = el.dataset.lang === currentLang ? '' : 'none';
+    });
+
+    langBtn.addEventListener('click', () => {
+      const newLang = localStorage.getItem('lang') === 'en' ? 'zh' : 'en';
+      localStorage.setItem('lang', newLang);
+      document.querySelectorAll(`[data-lang]`).forEach(el => {
+        el.style.display = el.dataset.lang === newLang ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
