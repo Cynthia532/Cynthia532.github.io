@@ -30,3 +30,26 @@ function switchLang(lang) {
     el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
   });
 }
+
+// About / Blog switch
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutBtn = document.getElementById('about-btn');
+  const blogBtn = document.getElementById('blog-btn');
+  const aboutContent = document.getElementById('about-content');
+  const blogFrame = document.getElementById('blog-frame');
+
+  if (aboutBtn && blogBtn) {
+    aboutBtn.onclick = () => {
+      aboutBtn.classList.add('active');
+      blogBtn.classList.remove('active');
+      aboutContent.style.display = 'block';
+      blogFrame.style.display = 'none';
+    };
+    blogBtn.onclick = () => {
+      blogBtn.classList.add('active');
+      aboutBtn.classList.remove('active');
+      aboutContent.style.display = 'none';
+      blogFrame.style.display = 'block';
+    };
+  }
+});
