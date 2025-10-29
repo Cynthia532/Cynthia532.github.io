@@ -90,23 +90,31 @@ body.dark {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  gap: 8px;
-  padding: 0 10px;
+  gap: 10px;
+  padding: 16px 14px;
+  font-size: 15px;
+  color: #213547;
+  background-color: rgba(74,163,223,0.04);
+  border-left: 1px solid rgba(74,163,223,0.06);
+  backdrop-filter: blur(4px);
+  border-radius: 4px 0 0 4px;
 }
 
 .sidebar-body button {
   background: none;
   border: none;
-  color: var(--text);
+  color: inherit;
   text-align: left;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 6px;
-  transition: background 0.2s;
+  padding: 10px 8px;
+  border-radius: 8px;
+  transition: background 0.15s, transform 0.12s;
+  font-size: 15px;
 }
 
 .sidebar-body button:hover {
-  background: rgba(0,0,0,0.05);
+  background: rgba(74,163,223,0.08);
+  transform: translateX(-4px);
 }
 
 #blog-frame {
