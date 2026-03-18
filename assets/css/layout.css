@@ -1,0 +1,20 @@
+/* ============================================
+   Layout Module: Main Content Area
+   ============================================ */
+
+.main-layout {
+  display: flex;
+  margin-top: 56px;
+  min-height: calc(100vh - 56px);
+  position: relative;
+  z-index: 1;
+}
+
+.content-area {
+  flex: 1;
+  max-width: 820px;
+  padding: 48px 40px 80px;
+  /* Left margin pushes content away from edge; right margin reserves space for sidebar */
+  margin-left: max(40px, calc((100vw - 220px - 820px) / 2));
+  margin-right: 240px;
+}

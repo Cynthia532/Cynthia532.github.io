@@ -1,4 +1,13 @@
-title: Zhixin Zhu’s Homepage
+title: Cynthia's Homepage
 description: Personal academic homepage
 markdown: kramdown
 theme: null
+baseurl: ""
+url: ""
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

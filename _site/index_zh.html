@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>{{ page.title }}</title>
+  <title>礽曦的主页</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body data-lang="{{ page.lang | default: 'en' }}">
+<body data-lang="zh">
 
   <!-- ========== Particle Canvas Background ========== -->
   <canvas id="particle-canvas"></canvas>
@@ -24,7 +24,7 @@
       </div>
 
       <div class="nav-links">
-        <a href="{{ '/' | relative_url }}" class="nav-item active" data-page="home">
+        <a href="/" class="nav-item active" data-page="home">
           <span class="nav-icon">⌂</span>
           <span class="nav-label" data-en="HOME" data-zh="主页">HOME</span>
         </a>
@@ -57,7 +57,7 @@
 
   <!-- ========== Mobile Nav Drawer (hidden on desktop) ========== -->
   <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-    <a href="{{ '/' | relative_url }}" class="nav-item active" data-page="home">
+    <a href="/" class="nav-item active" data-page="home">
       <span class="nav-icon">⌂</span>
       <span class="nav-label" data-en="HOME" data-zh="主页">HOME</span>
     </a>
@@ -76,7 +76,46 @@
     <!-- Content Area -->
     <main class="content-area" id="content-area">
       <article class="markdown-body" id="markdown-content">
-        {{ content }}
+        <h1 id="你好我是朱祉昕">你好，我是朱祉昕</h1>
+
+<p>我是一名专注于 <strong>高性能计算（HPC）</strong> 与 <strong>人工智能（AI）</strong> 的计算机科学本科生。
+目前是中山大学的 <strong>超算队成员</strong>，熟悉 <strong>C++</strong>、<strong>Python</strong> 与 <strong>CUDA</strong> 编程。</p>
+
+<p>📧 邮箱：<a href="mailto:cindy.zhu@live.cn">cindy.zhu@live.cn</a></p>
+
+<hr />
+
+<h2 id="教育经历">教育经历</h2>
+
+<ul>
+  <li><strong>计算机科学与技术专业</strong>，中山大学 <em>(2023–至今)</em></li>
+</ul>
+
+<hr />
+
+<h2 id="科研与项目">科研与项目</h2>
+
+<ul>
+  <li><strong>arcSYSU 成员</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="奖项">奖项</h2>
+
+<ul>
+  <li>🥇 <strong>ISC 2025 线上挑战赛冠军</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="联系方式">联系方式</h2>
+
+<ul>
+  <li>📧 邮箱：<a href="mailto:cindy.zhu@live.cn">cindy.zhu@live.cn</a></li>
+  <li>🐙 GitHub: <a href="https://github.com/Cynthia532">Cynthia532</a></li>
+</ul>
+
       </article>
     </main>
 
@@ -96,12 +135,12 @@
   </footer>
 
   <!-- ========== JS Modules ========== -->
-  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/language.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/i18n.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/particles.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/mobile.js' | relative_url }}"></script>
-  <script src="{{ '/assets/script.js' | relative_url }}" defer></script>
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/language.js"></script>
+  <script src="/assets/js/toc.js"></script>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/particles.js"></script>
+  <script src="/assets/js/mobile.js"></script>
+  <script src="/assets/script.js" defer></script>
 </body>
 </html>

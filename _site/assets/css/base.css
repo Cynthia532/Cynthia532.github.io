@@ -1,0 +1,130 @@
+/* ============================================
+   Base Module: Variables, Reset, Utilities
+   ============================================ */
+
+/* ---------- CSS Variables (Light / Dark) ---------- */
+:root {
+  /* Light Mode - Eco Green-Blue */
+  --bg-primary: #f0f7f4;
+  --bg-secondary: #e4f0ec;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --text-primary: #1a2e2a;
+  --text-secondary: #4a6b64;
+  --text-muted: #7a9b93;
+  --accent: #2ec4a0;
+  --accent-secondary: #1da8d8;
+  --accent-glow: rgba(46, 196, 160, 0.3);
+  --border: rgba(46, 196, 160, 0.15);
+  --border-strong: rgba(46, 196, 160, 0.3);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 20px rgba(46, 196, 160, 0.1);
+  --nav-bg: rgba(240, 247, 244, 0.85);
+  --sidebar-bg: rgba(240, 247, 244, 0.6);
+  --particle-color: rgba(46, 196, 160, 0.12);
+  --code-bg: rgba(46, 196, 160, 0.08);
+  --scrollbar-track: #e4f0ec;
+  --scrollbar-thumb: #2ec4a0;
+}
+
+body.dark {
+  /* Dark Mode - Sci-Fi Deep Blue-Green */
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #101828;
+  --bg-card: rgba(16, 24, 40, 0.8);
+  --text-primary: #e0f0ec;
+  --text-secondary: #8ab4a8;
+  --text-muted: #5a8a7c;
+  --accent: #3ce8b2;
+  --accent-secondary: #22c8e8;
+  --accent-glow: rgba(60, 232, 178, 0.25);
+  --border: rgba(60, 232, 178, 0.12);
+  --border-strong: rgba(60, 232, 178, 0.25);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 30px rgba(60, 232, 178, 0.08);
+  --nav-bg: rgba(10, 15, 26, 0.9);
+  --sidebar-bg: rgba(10, 15, 26, 0.7);
+  --particle-color: rgba(60, 232, 178, 0.08);
+  --code-bg: rgba(60, 232, 178, 0.06);
+  --scrollbar-track: #101828;
+  --scrollbar-thumb: #3ce8b2;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+/* ---------- Particle Canvas ---------- */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  border-top: 1px solid var(--border);
+  margin-right: 220px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Animations ---------- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.7; text-shadow: 0 0 8px var(--accent-glow); }
+  50% { opacity: 1; text-shadow: 0 0 16px var(--accent-glow); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

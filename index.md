@@ -1,32 +1,37 @@
 ---
 layout: default
-title: Zhixin Zhu’s Homepage
+title: Cynthia's Homepage
+lang: en
 ---
+
 # Hi, I'm Zhixin Zhu
 
 I'm a Computer Science undergraduate focusing on **HPC** and **AI**.
-Currently a member of the **Supercomputing Team**, experienced with **MPI**, **OpenMP**, and **CUDA**.
+Currently a member of the **SCC Team** of Sun Yat-Sen University, experienced with **C++**, **Python** and **CUDA**.
+
 📧 Email: [cindy.zhu@live.cn](mailto:cindy.zhu@live.cn)
 
 ---
 
-## 🎓 Education
+## Education
 
 - **B.S. in Computer Science**, Sun Yat-sen University *(2023–present)*
 
 ---
 
-## 🧪 Research & Projects
+## Research & Projects
 
 - Member of **arcSYSU**
-- Teaching assistant for **Compiler Principles** course
 
 ---
 
-## 🏆 Awards
+## Awards
 
 - 🥇 **ISC 2025 Online Challenge – Champion**
 
 ---
 
-[🇨🇳 中文版](./index_zh.md)
+## Contact
+
+- 📧 Email: [cindy.zhu@live.cn](mailto:cindy.zhu@live.cn)
+- 🐙 GitHub: [Cynthia532](https://github.com/Cynthia532)
