@@ -10,10 +10,10 @@ function initParticles() {
   let width, height;
   let particles = [];
   let mouse = { x: -9999, y: -9999 };
-  const MOUSE_RADIUS = 45;       // 鼠标影响半径（放大镜大小）
+  const MOUSE_RADIUS = 60;       // 鼠标影响半径（放大镜大小）
   const RETURN_SPEED = 0.06;      // 粒子回归速度
   const TEXT = 'Cynthia';
-  const GAP = 12;                 // 采样间距（越小粒子越密）
+  const GAP = 8;                 // 采样间距（越小粒子越密）
   const BASE_RADIUS = 1.2;        // 粒子基础半径
   const MAX_RADIUS = 4.5;         // 放大镜中心最大半径
   const LENS_RING_INNER = 0.3;    // 放大镜内环比例（0~1，粒子开始向外推的位置）
@@ -38,7 +38,7 @@ function initParticles() {
   function sampleTextParticles() {
     const isMobile = width < 768;
     const fontSize = isMobile ? Math.floor(width / 5) : Math.floor(Math.min(width / 7, 180));
-    const gap = isMobile ? 24 : GAP;
+    const gap = isMobile ? 18 : GAP;
 
     // 用离屏 canvas 渲染文字
     const offscreen = document.createElement('canvas');
