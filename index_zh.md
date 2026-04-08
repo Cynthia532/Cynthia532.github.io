@@ -9,10 +9,6 @@ lang: zh
 我是一名专注于 **高性能计算（HPC）** 与 **人工智能（AI）** 的计算机科学本科生。
 目前是中山大学 **超算队成员**，熟悉 **C++**、**Python**、**CUDA** 与 **MPI** 编程。
 
-📧 邮箱：[cindy.zhu@live.cn](mailto:cindy.zhu@live.cn)
-
-📄 [我的简历](./CV.pdf)
-
 ---
 
 ## 教育经历
@@ -63,10 +59,3 @@ lang: zh
 - **语言能力**：英语（CET-6：544）；普通话（母语）；粤语（母语）
 - **编程语言**：Python、C/C++、OpenMP、MPI、CUDA
 - **系统与工具**：Linux、GDB、CMake、性能分析与基准测试、Docker
-
----
-
-## 联系方式
-
-- 📧 邮箱：[cindy.zhu@live.cn](mailto:cindy.zhu@live.cn)
-- 🐙 GitHub: [Cynthia532](https://github.com/Cynthia532)

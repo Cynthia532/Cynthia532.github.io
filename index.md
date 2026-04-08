@@ -9,10 +9,6 @@ lang: en
 I'm a Computer Science undergraduate focusing on **HPC** and **AI**.
 Currently a member of the **SCC Team** at Sun Yat-Sen University, experienced with **C++**, **Python**, **CUDA**, and **MPI**.
 
-📧 Email: [cindy.zhu@live.cn](mailto:cindy.zhu@live.cn)
-
-📄 [My CV](./CV.pdf)
-
 ---
 
 ## Education
@@ -63,10 +59,3 @@ Currently a member of the **SCC Team** at Sun Yat-Sen University, experienced wi
 - **Languages**: English (CET-6: 544); Mandarin (Native); Cantonese (Native)
 - **Programming**: Python, C/C++, OpenMP, MPI, CUDA
 - **Systems & Tools**: Linux, GDB, CMake, Performance Profiling & Benchmarking, Docker
-
----
-
-## Contact
-
-- 📧 Email: [cindy.zhu@live.cn](mailto:cindy.zhu@live.cn)
-- 🐙 GitHub: [Cynthia532](https://github.com/Cynthia532)
