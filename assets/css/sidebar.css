@@ -4,10 +4,10 @@
 
 .sidebar {
   position: fixed;
-  top: 56px;
+  top: 64px;
   right: 0;
   width: 220px;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 64px);
   padding: 32px 16px;
   background: var(--sidebar-bg);
   backdrop-filter: blur(12px);

@@ -10,19 +10,19 @@ function initParticles() {
   let width, height;
   let particles = [];
   let mouse = { x: -9999, y: -9999 };
-  const MOUSE_RADIUS = 120;       // 鼠标影响半径（放大镜大小）
+  const MOUSE_RADIUS = 45;       // 鼠标影响半径（放大镜大小）
   const RETURN_SPEED = 0.06;      // 粒子回归速度
   const TEXT = 'Cynthia';
-  const GAP = 4;                  // 采样间距（越小粒子越密）
+  const GAP = 12;                 // 采样间距（越小粒子越密）
   const BASE_RADIUS = 1.2;        // 粒子基础半径
   const MAX_RADIUS = 4.5;         // 放大镜中心最大半径
-  const LENS_RING_INNER = 0.5;    // 放大镜内环比例（0~1，粒子开始向外推的位置）
-  const LENS_RING_OUTER = 1.0;    // 放大镜外环比例
+  const LENS_RING_INNER = 0.3;    // 放大镜内环比例（0~1，粒子开始向外推的位置）
+  const LENS_RING_OUTER = 0.8;    // 放大镜外环比例
   const LENS_PUSH = 18;           // 环上粒子向外推的距离
   const LENS_MAGNIFY = 1.6;       // 放大镜中心区域的位移放大倍率
   let ambientParticles = [];      // 环境装饰粒子
-  const AMBIENT_COUNT_DESKTOP = 30;
-  const AMBIENT_COUNT_MOBILE = 12;
+  const AMBIENT_COUNT_DESKTOP = 45;
+  const AMBIENT_COUNT_MOBILE = 18;
 
   // 获取主题色
   function getAccentColor(alpha) {
@@ -38,7 +38,7 @@ function initParticles() {
   function sampleTextParticles() {
     const isMobile = width < 768;
     const fontSize = isMobile ? Math.floor(width / 5) : Math.floor(Math.min(width / 7, 180));
-    const gap = isMobile ? 5 : GAP;
+    const gap = isMobile ? 24 : GAP;
 
     // 用离屏 canvas 渲染文字
     const offscreen = document.createElement('canvas');
@@ -50,7 +50,7 @@ function initParticles() {
     offCtx.font = 'bold ' + fontSize + 'px "Orbitron", monospace';
     offCtx.textAlign = 'center';
     offCtx.textBaseline = 'middle';
-    offCtx.fillText(TEXT, width / 2, height / 2);
+    offCtx.fillText(TEXT, width / 2, height * 0.78);
 
     // 采样像素
     const imageData = offCtx.getImageData(0, 0, width, height);

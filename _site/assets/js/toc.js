@@ -23,7 +23,11 @@ function initTOC() {
     item.href = '#' + heading.id;
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // 先清除hash再设置，确保即使点击同一个锚点也能触发滚动
+      history.pushState(null, '', '#' + heading.id);
+      // 使用手动计算确保标题露出（navbar 64px + 留白 36px = 100px）
+      const targetTop = heading.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: targetTop, behavior: 'smooth' });
       // Close sidebar on mobile after clicking
       closeMobileSidebar();
     });
@@ -35,7 +39,7 @@ function initTOC() {
   // Scroll-based active state: highlight the topmost visible heading in viewport
   function updateActiveHeading() {
     let activeIndex = -1;
-    const navbarHeight = 80; // navbar offset
+    const navbarHeight = 90; // navbar offset (64px + buffer)
 
     // Strategy: find the first heading whose top is within or below the viewport top
     // i.e. the topmost heading currently visible on screen

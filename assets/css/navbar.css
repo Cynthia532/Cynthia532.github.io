@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 56px;
+  height: 64px;
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);

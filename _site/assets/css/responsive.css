@@ -227,7 +227,7 @@
 .mobile-nav-drawer {
   display: none;
   position: fixed;
-  top: 56px;
+  top: 64px;
   left: 0;
   right: 0;
   background: var(--nav-bg);

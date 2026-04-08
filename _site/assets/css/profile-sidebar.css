@@ -4,10 +4,10 @@
 
 .profile-sidebar {
   position: fixed;
-  top: 56px;
+  top: 64px;
   left: 0;
   width: 260px;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 64px);
   padding: 40px 24px 32px;
   background: var(--sidebar-bg);
   backdrop-filter: blur(12px);
@@ -130,8 +130,6 @@
   flex-shrink: 0;
   opacity: 0.7;
   transition: opacity 0.25s ease;
-  /* 让 SVG 图标跟随文字颜色 */
-  filter: var(--icon-filter, none);
 }
 
 .profile-link:hover .profile-link-icon {
