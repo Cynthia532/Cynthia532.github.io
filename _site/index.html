@@ -43,8 +43,7 @@
     <!-- Right: Controls + Mobile menu button -->
     <div class="nav-controls">
       <button id="lang-toggle" class="ctrl-btn" title="Switch Language">
-        <span class="ctrl-icon">🌐</span>
-        <span class="ctrl-label" id="lang-label">EN</span>
+        <span class="ctrl-icon lang-text-icon" id="lang-label">文/EN</span>
       </button>
       <button id="theme-toggle" class="ctrl-btn" title="Toggle Theme">
         <span class="ctrl-icon" id="theme-icon">☀</span>
@@ -79,16 +78,23 @@
         <h1 id="hi-im-zhixin-zhu">Hi, I’m Zhixin Zhu</h1>
 
 <p>I’m a Computer Science undergraduate focusing on <strong>HPC</strong> and <strong>AI</strong>.
-Currently a member of the <strong>SCC Team</strong> of Sun Yat-Sen University, experienced with <strong>C++</strong>, <strong>Python</strong> and <strong>CUDA</strong>.</p>
+Currently a member of the <strong>SCC Team</strong> at Sun Yat-Sen University, experienced with <strong>C++</strong>, <strong>Python</strong>, <strong>CUDA</strong>, and <strong>MPI</strong>.</p>
 
 <p>📧 Email: <a href="mailto:cindy.zhu@live.cn">cindy.zhu@live.cn</a></p>
+
+<p>📄 <a href="/CV.pdf">My CV</a></p>
 
 <hr />
 
 <h2 id="education">Education</h2>
 
 <ul>
-  <li><strong>B.S. in Computer Science</strong>, Sun Yat-sen University <em>(2023–present)</em></li>
+  <li><strong>B.S. in Computer Science and Technology</strong>, Sun Yat-sen University <em>(Aug 2023 – June 2027 Expected)</em>
+    <ul>
+      <li><strong>GPA: 3.8 / 4.0</strong></li>
+      <li>Coursework: Artificial Intelligence; Machine Learning; Optimization Theory; Data Structures and Algorithms; Mathematical Analysis I &amp; II</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
@@ -96,7 +102,40 @@ Currently a member of the <strong>SCC Team</strong> of Sun Yat-Sen University, e
 <h2 id="research--projects">Research &amp; Projects</h2>
 
 <ul>
-  <li>Member of <strong>arcSYSU</strong></li>
+  <li><strong>Yat-CC</strong> <em>(Feb 2025 – July 2025)</em>
+    <ul>
+      <li>Refined the Intelligent TA knowledge base by optimizing data structures for enhanced retrieval quality.</li>
+      <li>Curated a compiler theory instruction-tuning dataset sourced from lecture slides and course materials.</li>
+      <li>Applied PEFT (LoRA) to Qwen3-Instruct-8B via PyTorch, boosting code comprehension and error feedback logic.</li>
+    </ul>
+  </li>
+  <li><strong>Optimization of code_saturne — ISC Student Cluster Competition</strong> <em>(Mar 2025 – May 2025)</em>
+    <ul>
+      <li>Addressed communication bottlenecks via MPI implementation comparisons and disk I/O minimization strategies.</li>
+      <li>Achieved a significant <strong>2.7× performance improvement</strong> for the LES_AIR_QUALITY case on Bridges 2.</li>
+      <li>Fixed GPU runtime errors; scalability requires architectural redesign.</li>
+    </ul>
+  </li>
+  <li><strong>Estimate Relative Camera Pose</strong> <em>(Sep 2025 – Feb 2026)</em>
+    <ul>
+      <li>Designed a minimal solver for relative pose estimation using point correspondences and surface normals.</li>
+      <li>Evaluated robustness and efficiency with several benchmarks.</li>
+    </ul>
+  </li>
+  <li><strong>vLLM-Ascend Sampler</strong> <em>(Nov 2025 – Jan 2026)</em>
+    <ul>
+      <li>Identified performance bottlenecks in Top-K / Top-P sampling during LLM inference on Ascend NPUs.</li>
+      <li>Implemented Triton-based fused sampling kernels to reduce kernel launches and memory access overhead.</li>
+      <li>Achieved up to <strong>1.88% latency reduction</strong> compared to the native Ascend 910 implementation.</li>
+    </ul>
+  </li>
+  <li><strong>Optimization of HPL-MxP</strong> <em>(Nov 2025 – Feb 2026)</em>
+    <ul>
+      <li>Evaluating performance and reliability of Huawei SDMA for large-scale dense linear algebra.</li>
+      <li>Integrating SDMA support into the HPL-MxP execution framework.</li>
+      <li>Optimizing single-block low-precision LU factorization without panel reordering.</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
@@ -104,7 +143,18 @@ Currently a member of the <strong>SCC Team</strong> of Sun Yat-Sen University, e
 <h2 id="awards">Awards</h2>
 
 <ul>
-  <li>🥇 <strong>ISC 2025 Online Challenge – Champion</strong></li>
+  <li>🥇 <strong>ISC 2025 Student Cluster Competition — 1st Place Online Winner</strong></li>
+  <li>🎓 <strong>2023–2025 Sun Yat-Sen University Scholarship</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="languages--technologies">Languages &amp; Technologies</h2>
+
+<ul>
+  <li><strong>Languages</strong>: English (CET-6: 544); Mandarin (Native); Cantonese (Native)</li>
+  <li><strong>Programming</strong>: Python, C/C++, OpenMP, MPI, CUDA</li>
+  <li><strong>Systems &amp; Tools</strong>: Linux, GDB, CMake, Performance Profiling &amp; Benchmarking, Docker</li>
 </ul>
 
 <hr />

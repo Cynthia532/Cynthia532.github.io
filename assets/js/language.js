@@ -58,5 +58,9 @@ function getBasePath() {
 }
 
 function updateLangLabel(el, lang) {
-  el.textContent = lang === 'en' ? 'EN' : '中';
+  if (lang === 'en') {
+    el.innerHTML = '文/<strong>EN</strong>';
+  } else {
+    el.innerHTML = '<strong>文</strong>/EN';
+  }
 }
