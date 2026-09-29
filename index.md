@@ -2,11 +2,11 @@
 layout: default
 title: Cynthia's Homepage
 lang: en
+resume_lang: en
 ---
 # Hi, I'm Zhixin Zhu
 
-I'm a Computer Science undergraduate at Sun Yat-sen University with research interests in **Machine Learning Systems (MLSys)**, with a planned focus on **model inference optimization**.
-I have secured recommendation-based admission to a **direct-entry Ph.D. program at Sun Yat-sen University, starting in 2027**.
+I'm a Computer Science undergraduate at Sun Yat-sen University with research interests in **Machine Learning Systems (MLSys)**, especially focus on **model inference optimization**.
 Currently a member of the **Supercomputing Team** at Sun Yat-sen University, experienced with **C++**, **Python**, **CUDA**, and **MPI** programming.
 
 ---
@@ -31,7 +31,6 @@ Currently a member of the **Supercomputing Team** at Sun Yat-sen University, exp
 - **Sponge Lab, HKUST — Research Intern** *(Feb 2026 – Aug 2026)*
 
   - Accelerated Vision-Language-Action models and embodied-AI control policies through model compression, unstructured pruning, and low-precision quantization.
-  - Developed custom visualization pipelines for an ongoing ECCV submission on token pruning and biased attention for faster VLA inference.
   - Ported the proposed token-pruning framework to the World Action Model setup with the autoregressive DreamZero architecture to study its transferability.
   - Evaluated KIVI-style KV-cache quantization in `cosmos-policy` and established its incompatibility with non-autoregressive control policies, which lack KV-cache structures.
   - Implemented 2:4 structured sparsity in `Lingbot-Map` to improve Tensor Core compute throughput.
