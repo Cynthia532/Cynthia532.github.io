@@ -3,16 +3,17 @@ layout: default
 title: Cynthia's Homepage
 lang: en
 ---
-
 # Hi, I'm Zhixin Zhu
 
-I'm a Computer Science undergraduate focusing on **HPC** and **AI**.
+I'm a Computer Science undergraduate at Sun Yat-sen University with research interests in **Machine Learning Systems (MLSys)**, with a planned focus on **model inference optimization**.
+I have secured recommendation-based admission to a **direct-entry Ph.D. program at Sun Yat-sen University, starting in 2027**.
 Currently a member of the **Supercomputing Team** at Sun Yat-sen University, experienced with **C++**, **Python**, **CUDA**, and **MPI** programming.
 
 ---
 
 ## Education
 
+- **Ph.D. in Computer Science and Technology(Incoming)**, Sun Yat-sen University *(2027 Expected)*
 - **B.S. in Computer Science and Technology**, Sun Yat-sen University *(Aug 2023 – June 2027 Expected)*
   - **GPA: 3.8 / 4.0**
   - Coursework: Artificial Intelligence; Machine Learning; Optimization Theory; Data Structures and Algorithms; Mathematical Analysis I & II
@@ -27,7 +28,7 @@ Currently a member of the **Supercomputing Team** at Sun Yat-sen University, exp
   - Profiled and evaluated the experimental thread-safe, GIL-protected `torch.compile`; aligned environments, upgraded PyTorch, and identified open-source compiler bugs limiting runtime speedup.
   - Diagnosed distributed-training bottlenecks with PyTorch Profiler and designed an adaptive gradient-accumulation mechanism across multiple GPU execution steps to reduce collective-communication overhead.
   - Demonstrated that embedding-layer operations, rather than standalone `all_reduce` operations, dominated communication latency in this workload.
-- **Sponge Lab, HKUST — Research Intern** *(Feb 2026 – Present)*
+- **Sponge Lab, HKUST — Research Intern** *(Feb 2026 – Aug 2026)*
 
   - Accelerated Vision-Language-Action models and embodied-AI control policies through model compression, unstructured pruning, and low-precision quantization.
   - Developed custom visualization pipelines for an ongoing ECCV submission on token pruning and biased attention for faster VLA inference.
