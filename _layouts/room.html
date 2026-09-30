@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Zhixin's little study. 简历、研究与笔记。">
+  <title>{{ page.title }}</title>
+  <style>
+    body { margin:0; background:#f7f0df; color:#665b49; font:16px/1.7 "Trebuchet MS","YouYuan","Microsoft YaHei",system-ui,sans-serif; }
+    #room-loading { position:fixed; inset:0; z-index:20; display:grid; place-items:center; padding:24px; overflow:auto; background:radial-gradient(ellipse at 20% 12%,#f2d7d4aa,transparent 45%),radial-gradient(ellipse at 85% 80%,#c8deca88,transparent 48%),#f7f0df; transition:opacity .35s ease; }
+    #room-loading::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.32; background-image:radial-gradient(#a6b69a 1px,transparent 1px); background-size:24px 24px; mask-image:linear-gradient(transparent,black); }
+    #room-loading.is-ready { opacity:0; pointer-events:none; }
+    #room-loading:focus { outline:none; }
+    .loading-content { position:relative; width:min(340px,90vw); text-align:center; padding:20px 0; }
+    .loading-house { display:block; width:236px; height:208px; margin:0 auto 18px; overflow:visible; animation:house-breathe 3.6s ease-in-out infinite; }
+    .loading-house .window-glow { animation:window-glow 2.4s ease-in-out infinite alternate; }
+    #loading-title { font-size:23px; font-weight:700; letter-spacing:.06em; margin:0 0 23px; }
+    .loading-track { box-sizing:border-box; height:20px; padding:4px; border-radius:20px; background:#e6ddc9; box-shadow:inset 0 2px 3px #786d4110,0 1px 0 #fffaf0; }
+    #loading-fill { display:block; height:100%; width:4%; border-radius:20px; background:linear-gradient(90deg,#a7ceb1,#78b69d); transition:width .35s ease; position:relative; }
+    #loading-fill::after { content:""; position:absolute; width:7px; height:7px; background:#eaf4dd; border-radius:50%; right:3px; top:2.5px; }
+    .loading-status { display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin:13px 2px 0; color:#8a806b; font-size:13px; }
+    #loading-message { margin:0; text-align:left; }
+    #loading-percent { font-variant-numeric:tabular-nums; flex:none; color:#67917b; }
+    .loading-fallback { display:none; margin-top:24px; flex-wrap:wrap; justify-content:center; gap:12px; }
+    .loading-fallback a { display:inline-block; padding:9px 18px; border-radius:22px; background:#dce9d6; color:#4f705d; font-size:13px; text-decoration:none; box-shadow:0 3px 0 #c5d7be; }
+    .loading-fallback a:hover { background:#cfe3c8; }
+    .loading-fallback a:focus-visible { outline:3px solid #659d83; outline-offset:4px; }
+    #room-loading.is-error .loading-fallback { display:flex; }
+    #room-loading.is-error .loading-track,#room-loading.is-error #loading-percent { display:none; }
+    #room-loading.is-error .loading-status { justify-content:center; }
+    #room-loading.is-error #loading-message { text-align:center; }
+    @keyframes house-breathe { 50% { transform:translateY(-4px); } }
+    @keyframes window-glow { to { fill:#ffedb4; } }
+    @media(prefers-reduced-motion:reduce) { #room-loading,#loading-fill { transition:none; } .loading-house,.loading-house .window-glow { animation:none; } }
+    [hidden] { display:none !important; }
+  </style>
+</head>
+<body>
+  <main id="room-loading" tabindex="-1">
+    <div class="loading-content">
+      <svg class="loading-house" viewBox="0 0 260 230" aria-hidden="true">
+        <ellipse cx="130" cy="209" rx="100" ry="12" fill="#dedec1" opacity=".6"/>
+        <path d="M18 193Q5 164 29 170Q19 147 44 153Q67 153 61 191" fill="#b6cea4"/>
+        <path d="M198 195Q190 164 211 165Q215 145 232 159Q254 160 244 195" fill="#a9c9a8"/>
+        <rect x="181" y="37" width="23" height="54" rx="6" fill="#d9b4aa"/>
+        <rect x="44" y="93" width="172" height="107" rx="12" fill="#efdfb9"/>
+        <path d="M35 103L130 28L225 103" fill="#b9d7bc" stroke="#8ebaa0" stroke-width="15" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M50 101L130 41L210 101" fill="#c7dfc6"/>
+        <rect x="94" y="116" width="72" height="86" rx="34" fill="#fff3d7"/>
+        <path d="M103 200V150a27 27 0 0 1 54 0v50" fill="#91bea6"/>
+        <path d="M112 151a18 18 0 0 1 36 0v17h-36z" class="window-glow" fill="#f5e1a5"/>
+        <path d="M130 135v32m-18-15h36" stroke="#d5e4c8" stroke-width="4"/>
+        <circle cx="146" cy="183" r="4" fill="#edc978"/>
+        <rect x="62" y="127" width="21" height="29" rx="10" fill="#fff3d7"/>
+        <rect x="67" y="132" width="11" height="19" rx="5" class="window-glow" fill="#f5e1a5"/>
+        <rect x="174" y="153" width="17" height="26" rx="7" fill="#e8b4bc"/>
+        <circle cx="182.5" cy="165" r="4" fill="#fff0cd"/>
+        <rect x="90" y="199" width="80" height="8" rx="4" fill="#dab990"/>
+        <path d="M45 202l-4-24h26l-4 24z" fill="#dba996"/>
+        <path d="M54 179v-24" stroke="#84a981" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="46" cy="164" rx="9" ry="5" fill="#96ba8f" transform="rotate(30 46 164)"/>
+        <ellipse cx="62" cy="156" rx="9" ry="5" fill="#b4cda0" transform="rotate(-30 62 156)"/>
+        <g fill="#fff6e0"><circle cx="213" cy="176" r="6"/><circle cx="223" cy="180" r="6"/><circle cx="218" cy="189" r="6"/><circle cx="208" cy="186" r="6"/></g>
+        <circle cx="215" cy="182" r="5" fill="#eac873"/>
+      </svg>
+      <h1 id="loading-title">小屋正在醒来</h1>
+      <div id="loading-progress" class="loading-track" role="progressbar" aria-label="准备小屋" aria-valuemin="0" aria-valuemax="100" aria-valuenow="4"><span id="loading-fill"></span></div>
+      <div class="loading-status"><p id="loading-message" role="status">正在为你开门…</p><span id="loading-percent" aria-hidden="true">4%</span></div>
+      <nav class="loading-fallback" aria-label="Classic homepages"><a href="{{ '/index_zh.html' | relative_url }}">中文 · 经典主页</a><a href="{{ '/' | relative_url }}">English · Classic</a></nav>
+      <noscript><style>.loading-fallback{display:flex}.loading-track,.loading-status{display:none}</style><p>开启 JavaScript 可进入小屋，也可以直接阅读经典主页。<br>Enable JavaScript to enter, or visit a classic homepage.</p></noscript>
+    </div>
+  </main>
+  <div id="room-root" hidden></div>
+  {% assign resume_en = site.pages | where: 'resume_lang', 'en' | first %}
+  {% assign resume_zh = site.pages | where: 'resume_lang', 'zh' | first %}
+  <template id="resume-en">{{ resume_en.content | markdownify }}</template>
+  <template id="resume-zh">{{ resume_zh.content | markdownify }}</template>
+  <template id="blog-items">
+    <ul>{% for post in site.posts %}<li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><time>{{ post.date | date: '%Y-%m-%d' }}</time></li>{% endfor %}</ul>
+  </template>
+  <template id="publication-items">
+    <ul>{% for paper in site.data.publications %}<li>{% if paper.url %}<a href="{{ paper.url | escape }}" target="_blank" rel="noopener noreferrer">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}<p>{{ paper.authors | escape }} · {{ paper.year | escape }} · {{ paper.venue | escape }}</p></li>{% endfor %}</ul>
+  </template>
+  <script id="room-config" type="application/json">
+    {
+      "classic": {"en": {{ '/' | relative_url | jsonify }}, "zh": {{ '/index_zh.html' | relative_url | jsonify }}},
+      "pdf": {{ '/CV.pdf' | relative_url | jsonify }}, "blog": {{ '/blog/' | relative_url | jsonify }},
+      "js": {% if site.data.room_assets.js %}{{ site.data.room_assets.js | relative_url | jsonify }}{% else %}null{% endif %},
+      "css": [{% for css in site.data.room_assets.css %}{{ css | relative_url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}]
+    }
+  </script>
+  <script type="module" src="{{ '/assets/js/room-entry.js' | relative_url }}"></script>
+</body>
+</html>

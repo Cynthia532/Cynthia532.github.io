@@ -1,0 +1,37 @@
+name: Build room preview
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: room-app/package-lock.json
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - run: npm ci
+        working-directory: room-app
+      - run: node scripts/build-site.mjs
+      - run: npx playwright install --with-deps chromium
+        working-directory: room-app
+      - run: npm test
+        working-directory: room-app
+      - uses: actions/upload-artifact@v4
+        with:
+          name: room-preview-site
+          path: _site
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: room-validation
+          path: |
+            room-app/test-results
+            room-app/playwright-report

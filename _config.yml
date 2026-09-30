@@ -5,6 +5,16 @@ theme: null
 baseurl: ""
 url: ""
 
+exclude:
+  - room-app
+  - scripts
+  - _design
+  - .cache
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+
 # Default front matter
 defaults:
   - scope:

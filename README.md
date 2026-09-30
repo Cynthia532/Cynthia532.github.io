@@ -1,3 +1,7 @@
+## Interactive room preview
+
+The first detailed desktop room preview is available at `/room/?lang=zh` or `/room/?lang=en` after building the site. It includes a shared indoor/outdoor house, soft furnishings, plants, and an editable character. See [room-app/README.md](room-app/README.md) for local preview commands, controls, and validation. Mobile visitors continue to use the classic homepage.
+
 ## How to config?
 
 **Windows + WSL**

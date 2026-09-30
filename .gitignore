@@ -3,3 +3,9 @@ _site/
 .sass-cache/
 .jekyll-metadata
 vendor/bundle/
+node_modules/
+.cache/
+assets/room/
+_data/room_assets.json
+room-app/test-results/
+room-app/playwright-report/

@@ -5,25 +5,26 @@ function initLanguage() {
   const langBtn = document.getElementById('lang-toggle');
   const langLabel = document.getElementById('lang-label');
   const currentLang = document.body.getAttribute('data-lang') || 'en';
-  const savedLang = localStorage.getItem('lang');
-
-  // If saved language differs from page lang, redirect
-  if (savedLang && savedLang !== currentLang) {
-    redirectToLang(savedLang);
-    return;
-  }
+  // Explicit page URLs win over preferences, including links from the room.
+  if (!langBtn || !langLabel) return;
+  try { localStorage.setItem('lang', currentLang); } catch { /* Optional storage. */ }
 
   updateLangLabel(langLabel, currentLang);
 
   langBtn.addEventListener('click', () => {
     const current = document.body.getAttribute('data-lang') || 'en';
     const target = current === 'en' ? 'zh' : 'en';
-    localStorage.setItem('lang', target);
+    try { localStorage.setItem('lang', target); } catch { /* Optional storage. */ }
     redirectToLang(target);
   });
 }
 
 function redirectToLang(lang) {
+  const routes = { en: document.body.dataset.homeEn, zh: document.body.dataset.homeZh };
+  if (routes[lang]) {
+    window.location.assign(routes[lang]);
+    return;
+  }
   const path = window.location.pathname;
   const base = getBasePath();
 

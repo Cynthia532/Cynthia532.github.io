@@ -8,3 +8,6 @@
 @import url('css/markdown.css');
 @import url('css/sidebar.css');
 @import url('css/responsive.css');
+
+/* Desktop-only room links remain hidden until the capability gate passes. */
+[data-room-link][hidden] { display: none !important; }
