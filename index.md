@@ -3,6 +3,7 @@ layout: default
 title: Cynthia's Homepage
 lang: en
 resume_lang: en
+permalink: /classic/en/
 ---
 # Hi, I'm Zhixin Zhu
 

@@ -1,0 +1,19 @@
+---
+layout: null
+permalink: /index_zh.html
+---
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0;url={{ site.classic_pages.zh | relative_url }}">
+  <link rel="canonical" href="{{ site.classic_pages.zh | absolute_url }}">
+  <title>中文经典主页</title>
+  <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f7f0df;font:16px system-ui,sans-serif}a{color:#4f705d}</style>
+</head>
+<body>
+  <a id="classic-destination" href="{{ site.classic_pages.zh | relative_url }}">前往中文经典主页</a>
+  <script>location.replace(document.getElementById('classic-destination').href + location.search + location.hash);</script>
+</body>
+</html>

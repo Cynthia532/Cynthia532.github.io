@@ -105,7 +105,10 @@ test('failed assets retain classic links', async ({ page }) => {
   await page.route('**/assets/room/**', route => route.abort());
   await page.goto('/room/?lang=en');
   await expect(page.locator('#loading-message')).toContainText('unavailable');
-  await expect(page.locator('#room-loading a').last()).toHaveAttribute('href', '/');
+  await expect(page.locator('#room-loading a').last()).toHaveAttribute('href', '/classic/en/');
+  await page.locator('#room-loading a').last().click();
+  await expect(page).toHaveURL(/\/classic\/en\/$/);
+  await expect(page.locator('#particle-canvas')).toBeVisible();
 });
 
 test('loading progress waits for assets and the first rendered frame', async ({ page }, testInfo) => {
@@ -128,7 +131,7 @@ test('loading progress waits for assets and the first rendered frame', async ({ 
 });
 test('explicit language wins and narrow desktop stays in the room', async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('lang', 'zh'));
-  await page.goto('/'); await expect(page.locator('body')).toHaveAttribute('data-lang', 'en');
+  await page.goto('/classic/en/'); await expect(page.locator('body')).toHaveAttribute('data-lang', 'en');
   await boot(page); await page.setViewportSize({ width: 640, height: 850 });
   await expect(page.locator('#study-canvas')).toBeVisible(); await expect(page).toHaveURL(/\/room\//);
 });
@@ -153,7 +156,33 @@ test('minimal game HUD and mouse doorway exit', async ({ page }, testInfo) => {
   await expect(page.locator('#room-root')).toHaveAttribute('data-phase', 'explore');
   await page.screenshot({ path: testInfo.outputPath('exit-return.png') });
   await walkTo(page, 1.3, 4.3); await clickObject(page, 'bell');
-  await expect(page).toHaveURL('http://127.0.0.1:4173/');
+  await expect(page).toHaveURL('http://127.0.0.1:4173/classic/en/');
+});
+
+for (const lang of ['en', 'zh']) test(`homepage opens the room and the ${lang} bell stays in classic pages`, async ({ page }) => {
+  const other = lang === 'en' ? 'zh' : 'en';
+  await page.addInitScript(value => localStorage.setItem('lang', value), other);
+  await page.goto(`/?lang=${lang}`);
+  await expect(page).toHaveURL(`/room/?lang=${lang}`);
+  await expect(page.locator('#room-root')).toHaveAttribute('data-ready', 'true');
+  await expect(page.locator('#room-loading')).not.toBeVisible();
+  await walkTo(page, 1.3, 4.3); await clickObject(page, 'bell');
+  await expect(page).toHaveURL(`/classic/${lang}/`);
+  await expect(page.locator('body')).toHaveAttribute('data-lang', lang);
+  await expect(page.locator('#particle-canvas')).toBeVisible();
+  await page.reload(); await expect(page).toHaveURL(`/classic/${lang}/`);
+  await page.locator('#lang-toggle').click();
+  await expect(page).toHaveURL(`/classic/${other}/`);
+  await expect(page.locator('body')).toHaveAttribute('data-lang', other);
+  await page.locator('[data-room-link]').click();
+  await expect(page).toHaveURL(`/room/?lang=${other}`);
+  await expect(page.locator('#room-root')).toHaveAttribute('data-ready', 'true');
+});
+
+test('old Chinese URL still reaches its classic resume', async ({ page }) => {
+  await page.goto('/index_zh.html');
+  await expect(page).toHaveURL('/classic/zh/');
+  await expect(page.locator('#markdown-content')).toContainText('朱祉昕');
 });
 async function view(page: Page) {
   return page.locator('#room-root').evaluate(el => ({ yaw: Number(el.dataset.viewYaw), tilt: Number(el.dataset.viewTilt) }));

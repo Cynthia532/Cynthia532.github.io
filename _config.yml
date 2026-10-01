@@ -3,7 +3,11 @@ description: Personal academic homepage
 markdown: kramdown
 theme: null
 baseurl: ""
-url: ""
+url: "https://cynthia532.github.io"
+
+classic_pages:
+  en: /classic/en/
+  zh: /classic/zh/
 
 exclude:
   - room-app

@@ -4,6 +4,10 @@ const lang = readLanguage();
 document.documentElement.lang = lang;
 if (!supportsDesktopRoom()) {
   location.replace(config.classic[lang]);
+} else if (config.homeEntry) {
+  const roomURL = new URL(config.room, location.href);
+  roomURL.searchParams.set('lang', lang);
+  location.replace(roomURL);
 } else {
   const loading = document.getElementById('room-loading');
   const root = document.getElementById('room-root');

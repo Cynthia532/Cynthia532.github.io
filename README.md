@@ -1,6 +1,8 @@
 ## Interactive room preview
 
-The first detailed desktop room preview is available at `/room/?lang=zh` or `/room/?lang=en` after building the site. It includes a shared indoor/outdoor house, soft furnishings, plants, and an editable character. See [room-app/README.md](room-app/README.md) for local preview commands, controls, and validation. Mobile visitors continue to use the classic homepage.
+The homepage routes desktop visitors to `/room/` and mobile visitors directly to the classic resume. The doorbell opens `/classic/zh/` or `/classic/en/`, preserving the particle pages. It includes a shared indoor/outdoor house, soft furnishings, plants, and an editable character. See [room-app/README.md](room-app/README.md) for local preview commands, controls, and validation.
+
+To publish, select **Settings → Pages → Source → GitHub Actions** and push to `main`. The **Deploy homepage** workflow builds the room assets before Jekyll and deploys the complete `_site/`. The default branch-based Jekyll builder cannot build the room. Generated assets remain ignored; commit the source and workflow files.
 
 ## How to config?
 

@@ -1,6 +1,6 @@
 # 小书房：精细模型第一版
 
-新增地址为 `/room/?lang=zh` 或 `/room/?lang=en`。网站根页面仍是现有普通主页；本阶段没有切换首页入口，也没有部署线上版本。
+首页 `/` 在电脑端跳转至 `/room/`，手机和平板直接进入对应语言的经典页面。门铃进入 `/classic/zh/` 或 `/classic/en/`；这些地址直接访问、刷新和切换语言都保留经典布局与粒子效果。`/index_zh.html` 保留为中文经典页的兼容跳转。新增部署流程需由用户提交，并把 GitHub Pages 的 Source 改为 GitHub Actions 后生效。
 
 ## 已实现
 
@@ -91,7 +91,17 @@ Pop-Location
 
 本机测试默认使用浏览器的图形设置；CI 使用 SwiftShader 软件渲染。本机需要复现 CI 图形路径时设置 `STUDY_SOFTWARE_WEBGL=1`。软件渲染在复杂场景和实时阴影下可能明显慢于实际 GPU，不能将其截图测试时间当作用户设备帧率。
 
-`.github/workflows/room-preview.yml` 是手动触发的验证工作流，只构建、运行测试并上传预览 artifact，不发布 GitHub Pages。当前站点的线上部署流程尚未切换。
+`.github/workflows/room-preview.yml` 保留为手动验证工作流，只构建、运行测试并上传预览 artifact。
+
+## GitHub Pages 发布
+
+正式流程是 `.github/workflows/pages.yml`（Actions 中名为 **Deploy homepage**），在推送到 `main` 或手动运行时执行：安装 Node / Ruby 依赖 → 构建房间 JS/CSS 与资源清单 → Jekyll 构建 → 检查首页及经典页面路由、资源文件与逻辑 → 上传并发布 `_site/`。
+
+首次接入时，在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，然后提交并推送源码及工作流。无需另外创建 GitHub 提供的模板。若推送时尚未切换来源，在完成设置后手动运行一次 **Deploy homepage**。
+
+`assets/room/`、`_data/room_assets.json` 和 `_site/` 仍是自动生成且被忽略的产物，不要改为手动提交。默认的分支 Jekyll 构建不会运行 Vite，可能成功发布 HTML 却留下 `"js": null`，从而显示 room unavailable。当前完整构建会在资源或路由缺失时直接失败，阻止发布不完整页面。
+
+房间和经典页面的地址在 `_config.yml` 中集中配置。中英文简历仍只维护 `index.md` 和 `index_zh.md`，新增 `index.html` 是首页分流入口，不存放第二份简历。
 
 ## 文件与内容维护
 

@@ -3,6 +3,7 @@ layout: default
 title: 礽曦的主页
 lang: zh
 resume_lang: zh
+permalink: /classic/zh/
 ---
 # 你好，我是朱祉昕
 

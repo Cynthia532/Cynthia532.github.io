@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
-<body data-lang="{{ page.lang | default: 'en' }}" data-home-en="{{ '/' | relative_url }}" data-home-zh="{{ '/index_zh.html' | relative_url }}">
+{% assign home_lang = page.lang | default: 'en' %}
+<body data-lang="{{ home_lang }}" data-home-en="{{ site.classic_pages.en | relative_url }}" data-home-zh="{{ site.classic_pages.zh | relative_url }}">
 
   <!-- ========== Particle Canvas Background ========== -->
   <canvas id="particle-canvas"></canvas>
@@ -24,7 +25,7 @@
       </div>
 
       <div class="nav-links">
-        <a href="{{ '/' | relative_url }}" class="nav-item active" data-page="home">
+        <a href="{{ site.classic_pages[home_lang] | relative_url }}" class="nav-item active" data-page="home">
           <span class="nav-icon">⌂</span>
           <span class="nav-label" data-en="HOME" data-zh="主页">HOME</span>
         </a>
@@ -56,7 +57,7 @@
 
   <!-- ========== Mobile Nav Drawer (hidden on desktop) ========== -->
   <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-    <a href="{{ '/' | relative_url }}" class="nav-item active" data-page="home">
+    <a href="{{ site.classic_pages[home_lang] | relative_url }}" class="nav-item active" data-page="home">
       <span class="nav-icon">⌂</span>
       <span class="nav-label" data-en="HOME" data-zh="主页">HOME</span>
     </a>

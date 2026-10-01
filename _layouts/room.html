@@ -66,7 +66,7 @@
       <h1 id="loading-title">小屋正在醒来</h1>
       <div id="loading-progress" class="loading-track" role="progressbar" aria-label="准备小屋" aria-valuemin="0" aria-valuemax="100" aria-valuenow="4"><span id="loading-fill"></span></div>
       <div class="loading-status"><p id="loading-message" role="status">正在为你开门…</p><span id="loading-percent" aria-hidden="true">4%</span></div>
-      <nav class="loading-fallback" aria-label="Classic homepages"><a href="{{ '/index_zh.html' | relative_url }}">中文 · 经典主页</a><a href="{{ '/' | relative_url }}">English · Classic</a></nav>
+      <nav class="loading-fallback" aria-label="Classic homepages"><a href="{{ site.classic_pages.zh | relative_url }}">中文 · 经典主页</a><a href="{{ site.classic_pages.en | relative_url }}">English · Classic</a></nav>
       <noscript><style>.loading-fallback{display:flex}.loading-track,.loading-status{display:none}</style><p>开启 JavaScript 可进入小屋，也可以直接阅读经典主页。<br>Enable JavaScript to enter, or visit a classic homepage.</p></noscript>
     </div>
   </main>
@@ -83,7 +83,8 @@
   </template>
   <script id="room-config" type="application/json">
     {
-      "classic": {"en": {{ '/' | relative_url | jsonify }}, "zh": {{ '/index_zh.html' | relative_url | jsonify }}},
+      "classic": {"en": {{ site.classic_pages.en | relative_url | jsonify }}, "zh": {{ site.classic_pages.zh | relative_url | jsonify }}},
+      "homeEntry": {{ page.home_entry | default: false | jsonify }}, "room": {{ '/room/' | relative_url | jsonify }},
       "pdf": {{ '/CV.pdf' | relative_url | jsonify }}, "blog": {{ '/blog/' | relative_url | jsonify }},
       "js": {% if site.data.room_assets.js %}{{ site.data.room_assets.js | relative_url | jsonify }}{% else %}null{% endif %},
       "css": [{% for css in site.data.room_assets.css %}{{ css | relative_url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}]
