@@ -17,6 +17,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+  # Jekyll 3 replaces default exclusions; CI installs Ruby gems under vendor/bundle.
+  - vendor
   - README.md
 
 # Default front matter
